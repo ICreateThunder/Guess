@@ -42,6 +42,6 @@
             }
         }
 
-        public static string integerSuffix(int value) { return (value.ToString()[value.ToString().Length - 1] == 1) ? "st" : "th"; }
+        public static string integerSuffix(int value) { return (value.ToString()[value.ToString().Length - 1] == '1') ? "st" : "th"; }
     }
 }
