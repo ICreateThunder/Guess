@@ -6,11 +6,11 @@
         {
             // Generate random value
             Random random = new Random();
-            byte value = Convert.ToByte(random.Next(0, 100));
+            byte value = Convert.ToByte(random.Next(1, 100));
 
             byte input;
 
-            Console.WriteLine("---           ---\n- Guessing Game -\n---           ---\n\nWelcome, the game is simple: Guess the value.\nThe program will think of a number between 0 and 100.\nIt's your job to guess it in a maximum of 6 turns. \n\nGood luck\n\n");
+            Console.WriteLine("---           ---\n- Guessing Game -\n---           ---\n\nWelcome, the game is simple: Guess the value.\nThe program will think of a number between 1 and 99.\nIt's your job to guess it in a maximum of 6 turns. \n\nGood luck\n\n");
 
             for (byte i = 0; i < 6; i++)
             {
@@ -23,12 +23,12 @@
                 try
                 {
                     input = Convert.ToByte(Console.ReadLine());
-                } catch (OverflowException) { Console.WriteLine($"[!] ERROR :: Value outside of bounds. Select value between 0 - 100\n\nRemaining guesses: {6-(i+1)}/6"); }
-                catch (Exception) { Console.WriteLine($"[!] ERROR :: Something went wrong. Select value between 0 - 100\n\nRemaining guesses: {6-(i+1)}/6"); }
+                } catch (OverflowException) { Console.WriteLine($"[!] ERROR :: Value outside of bounds. Select value between 1 - 99\n\nRemaining guesses: {6-(i+1)}/6"); }
+                catch (Exception) { Console.WriteLine($"[!] ERROR :: Something went wrong. Select value between 1 - 99\n\nRemaining guesses: {6-(i+1)}/6"); }
 
-                if (input > 100)
+                if (input > 99)
                 {
-                    Console.WriteLine($"[!] ERROR :: Value outside of bounds. Select value between 0 - 100\\n\\nRemaining guesses: {6 - (i + 1)}/6");
+                    Console.WriteLine($"[!] ERROR :: Value outside of bounds. Select value between 1 - 99\\n\\nRemaining guesses: {6 - (i + 1)}/6");
                     continue;
                 }
 
